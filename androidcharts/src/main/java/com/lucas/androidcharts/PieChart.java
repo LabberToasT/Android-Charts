@@ -269,8 +269,11 @@ public class PieChart extends ViewUtils {
      * @param pieData Liste mit Datensätzen
      */
     public void setPieData(List<DataSet> pieData) {
-        if (pieData.size() == 0)
+        if (pieData.size() == 0) {
+
+            clearData();
             return;
+        }
 
         mTouchEnabled = true;
 
@@ -283,6 +286,11 @@ public class PieChart extends ViewUtils {
 
         createLegendItems(getVisibleSlices());
         invalidate();
+    }
+
+    private void clearData() {
+        mDataTotal = 0;
+        mPieData.clear();
     }
 
     /**
