@@ -270,8 +270,8 @@ public class PieChart extends ViewUtils {
      */
     public void setPieData(List<DataSet> pieData) {
         if (pieData.size() == 0) {
-
             clearData();
+            invalidate();
             return;
         }
 
